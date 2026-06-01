@@ -13,7 +13,7 @@ and Summer 2027 engineering internship applications.
 ### What it does
 A motor latching circuit where:
 - Pressing START energizes the motor and holds it on via a Motor contact
-- Releasing START keeps the motor running (Motor latched)
+- Releasing START keeps the motor running (seal-in latched)
 - Pressing STOP de-energizes the motor
 - Motor does not restart automatically after Stop is released
 
