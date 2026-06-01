@@ -31,6 +31,5 @@ the momentary Start button is released. This is the fundamental
 motor control latching circuit used in industrial automation.
 
 ### Screenshot
-<img width="5712" height="3213" alt="IMG_1233" src="https://github.com/user-attachments/assets/1ee75f80-9b8a-437a-8401-53ddec3a7948" />
-<img width="5712" height="3213" alt="IMG_1232" src="https://github.com/user-attachments/assets/d3f05d7d-d1d4-48ee-b6ec-4d0685691cd8" />
-
+<img width="5712" height="3213" alt="IMG_1235" src="https://github.com/user-attachments/assets/e443b162-a9c4-4d75-97c9-dcd6b482aaa6" />
+<img width="5712" height="3213" alt="IMG_1234" src="https://github.com/user-attachments/assets/9756d3ab-da89-4443-99c3-a777e50c2e73" />
