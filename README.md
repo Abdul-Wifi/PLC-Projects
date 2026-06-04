@@ -65,7 +65,7 @@ An automatic traffic light sequence that runs continuously:
 <img width="1280" height="720" alt="traffic light pic" src="https://github.com/user-attachments/assets/2d41ec19-9287-4081-aeeb-60d3d1169397" />
 <img width="1280" height="720" alt="traffic light" src="https://github.com/user-attachments/assets/de30d3e9-da9b-43e1-9df3-930b88681c9f" />
 
-# Project 3: # BRX PLC Up/Down Occupancy Counter
+# Project 3: BRX PLC Up/Down Occupancy Counter
 
 ## Overview
 
@@ -99,7 +99,7 @@ A UDC (Up/Down Counter) instruction is used because vehicles both enter and leav
 
 ### Edge-Triggered Counting
 
-The counter operates on the rising edge (OFF → ON transition) of the input signal.
+The counter operates on the rising edge (OFF → ON transition) of count input.
 
 This means:
 
@@ -151,9 +151,12 @@ For example, with a capacity of 5 vehicles:
 * Relational comparison instructions
 * Boundary condition handling
 * Occupancy monitoring logic
-* Industrial ladder logic programming
+* bench-simulated project 
 
 ---
+<img width="1280" height="720" alt="WhatsApp Image 2026-06-03 at 9 15 51 PM" src="https://github.com/user-attachments/assets/7196bbd4-c3e8-4878-bc71-e159da837858" />
+<img width="1280" height="720" alt="WhatsApp Image 2026-06-03 at 9 16 21 PM" src="https://github.com/user-attachments/assets/ab09517f-ce9d-4c31-9816-21c81e518736" />
+
 
 ## Testing
 
@@ -192,6 +195,4 @@ Test cases included:
 **AbdulAzeem Adebayo**
 
 Controls and Automation Engineering Project
-<img width="1280" height="720" alt="WhatsApp Image 2026-06-03 at 9 15 51 PM" src="https://github.com/user-attachments/assets/7196bbd4-c3e8-4878-bc71-e159da837858" />
-<img width="1280" height="720" alt="WhatsApp Image 2026-06-03 at 9 16 21 PM" src="https://github.com/user-attachments/assets/ab09517f-ce9d-4c31-9816-21c81e518736" />
 
