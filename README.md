@@ -51,9 +51,9 @@ An automatic traffic light sequence that runs continuously:
 | Y0 | Output | Red light |
 | Y1 | Output | Yellow light |
 | Y2 | Output | Green light |
-| T0 | TMR | Green timer 15s |
+| T0 | TMR | Red timer 15s |
 | T1 | TMR | Yellow timer 5s |
-| T2 | TMR | Red timer 15s |
+| T2 | TMR | Green timer 15s |
 
 ### Key concepts demonstrated
 - Sequential timer logic using TMR instructions
