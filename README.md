@@ -48,9 +48,9 @@ An automatic traffic light sequence that runs continuously:
 ### I/O List
 | Address | Type | Description |
 |---------|------|-------------|
-| Y0 | Output | Green light |
+| Y0 | Output | Red light |
 | Y1 | Output | Yellow light |
-| Y2 | Output | Red light |
+| Y2 | Output | Green light |
 | T0 | TMR | Green timer 15s |
 | T1 | TMR | Yellow timer 5s |
 | T2 | TMR | Red timer 15s |
