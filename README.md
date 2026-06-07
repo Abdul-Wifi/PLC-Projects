@@ -196,3 +196,84 @@ Test cases included:
 
 Controls and Automation Engineering Project
 
+Test 5: Partial Pedestrian Trigger
+
+Sequence:
+
+A person or object activates only S1 and never reaches S2.
+
+Result:
+
+	•	Entering latch set
+	•	No confirming second sensor activation
+	•	Both sensors eventually clear
+	•	Cleanup logic removes the latch
+	•	No count generated
+
+Pass.
+
+This test confirms that partial trips do not change the occupancy count.
+
+Test 6: Reversal / Abort
+
+Sequence:
+
+S1 activates, direction is latched, then the vehicle reverses before reaching S2.
+
+Result:
+
+	•	Entering latch set
+	•	No confirming second sensor activation
+	•	Vehicle leaves the sensor area
+	•	Cleanup logic clears the latch
+	•	No count generated
+
+Pass.
+
+This test verifies that vehicles which begin a sequence but do not complete it are not counted.
+
+Test 7: Sensor Flicker / Double-Count Protection
+
+Sequence:
+
+A valid entry sequence occurs and increases the count. After the count, an additional sensor activation or flicker occurs.
+
+Result:
+
+	•	Entry counted once
+	•	Direction latch consumed and cleared after the count
+	•	Additional sensor activity does not generate another count
+
+Pass.
+
+This test verifies that one vehicle movement produces only one count.
+
+⸻
+
+Occupancy Limits
+
+The parking lot capacity is limited to five vehicles.
+
+The PLC only allows an entry count when:
+
+	•	CT0.Acc < 5
+
+The PLC only allows an exit count when:
+
+	•	CT0.Acc > 0
+
+These conditions prevent the counter from exceeding the maximum capacity or going below zero.
+
+⸻
+
+What I Learned
+
+This project showed that counting vehicles is more complicated than simply detecting a sensor turning on.
+
+The main challenge was determining direction while avoiding false counts from partial movements, reversals, and repeated sensor activations. Building the direction latches, count confirmation logic, occupancy limits, and cleanup logic helped me understand how PLC systems use state information to make reliable decisions.
+
+One of the most important lessons was learning to count on the edge of a confirmed event rather than on a condition that remains true for multiple PLC scans. A latched bit can stay on for many scans, which can cause repeated counts if it is not consumed and cleared after use.
+
+<img width="1280" height="720" alt="plc directional counter 2" src="https://github.com/user-attachments/assets/8b532452-7092-4b13-b936-29fdb1736a67" />
+<img width="1280" height="720" alt="plc directional counter 1" src="https://github.com/user-attachments/assets/7fd09ac8-3232-4044-a13a-18cad86c34e9" />
+
