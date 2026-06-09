@@ -25,14 +25,12 @@ A motor latching circuit where:
 | Y1 | Output | Motor contactor |
 
 ### Key concept demonstrated
-Seal-in contact: the output coil (Y1) uses its own NO contact in 
-parallel with the Start button to maintain the rung true after 
-the momentary Start button is released. This is the fundamental 
-motor control latching circuit used in industrial automation.
+Seal-in contact: the output coil (Y1) uses its own NO contact in parallel with the Start button to maintain the rung true after the momentary Start button is released. This is the fundamental motor control latching circuit used in industrial automation.
 
 ### Screenshot
-<img width="5712" height="3213" alt="IMG_1235" src="https://github.com/user-attachments/assets/e443b162-a9c4-4d75-97c9-dcd6b482aaa6" />
-<img width="5712" height="3213" alt="IMG_1234" src="https://github.com/user-attachments/assets/9756d3ab-da89-4443-99c3-a777e50c2e73" />
+<img width="1280" height="720" alt="seal-in motot" src="https://github.com/user-attachments/assets/e24e9cf4-763d-481e-9697-faf73c62dde4" />
+<img width="1280" height="720" alt="seal-in motor" src="https://github.com/user-attachments/assets/02613bed-3e83-4f7b-9e21-58a3fd3d203a" />
+
 
 ## Project 2: Traffic Light Controller
 **Platform:** Do-more Designer (BRX simulator)
