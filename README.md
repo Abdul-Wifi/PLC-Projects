@@ -182,96 +182,106 @@ Test cases included:
 
 ---
 
-## Software Used
 
-* Do-more Designer
-* BRX PLC Simulator
+## Project 4: Directional Vehicle Counter
+**Platform:** Do-more Designer (BRX simulator)
+**Date:** June 2026
 
----
+### Overview
+An extension of the occupancy counter (Project 3) that determines **direction of
+travel** from two sensors instead of relying on separate pre-assigned entry/exit
+sensors. Direction is inferred from the *order* in which the two sensors trip, and
+the logic rejects partial trips, reversals, and sensor flicker so that one real
+vehicle movement produces exactly one count.
 
+### Operating principle
+Two sensors are positioned in sequence (S1 outer, S2 inner):
+- Direction is set by **which sensor's rising edge fires while the other is still
+  off** — S1 first → entering; S2 first → exiting.
+- The detected direction is held in a latch (C0 = entering, C1 = exiting).
+- The count is generated only on the **confirming rising edge of the second
+  sensor**, not when the first sensor trips. This is what rejects pedestrians and
+  partial trips.
+- When a count is generated, the direction latch is **consumed (reset)** so flicker
+  or a held sensor cannot produce a second count.
+- If both sensors clear without a confirming second trip, cleanup logic clears the
+  latch (the abort/reversal case).
 
-Controls and Automation Engineering Project
+### I/O Mapping
+| Address | Type | Description |
+|---|---|---|
+| X0 | Input | Outer sensor (S1) |
+| X2 | Input | Inner sensor (S2) |
+| X3 | Input | Counter reset |
+| C0 | Internal bit | Entering latch |
+| C1 | Internal bit | Exiting latch |
+| CT0 | UDC | Occupancy counter |
 
-Test 5: Partial Pedestrian Trigger
+### Occupancy limits
+Capacity is limited to five vehicles:
+- An entry (up) count is allowed only when `CT0.Acc < 5`.
+- An exit (down) count is allowed only when `CT0.Acc > 0`.
 
-Sequence:
+These prevent the count from exceeding capacity or dropping below zero.
 
-A person or object activates only S1 and never reaches S2.
+### Testing
+Tested in the Do-more Designer simulator.
 
-Result:
+**Test 1 — Valid entry:** S1 then S2 → entering latch set, confirming S2 edge counts
+up once. **Pass.**
 
-	•	Entering latch set
-	•	No confirming second sensor activation
-	•	Both sensors eventually clear
-	•	Cleanup logic removes the latch
-	•	No count generated
+**Test 2 — Valid exit:** S2 then S1 → exiting latch set, confirming S1 edge counts
+down once. **Pass.**
 
-Pass.
+**Test 3 — Partial pedestrian trigger:** only S1 activates; S2 never reached.
+- Entering latch set
+- No confirming second-sensor activation
+- Both sensors eventually clear
+- Cleanup logic removes the latch
+- No count generated
 
-This test confirms that partial trips do not change the occupancy count.
+**Pass** — partial trips do not change the occupancy count.
 
-Test 6: Reversal / Abort
+**Test 4 — Reversal / abort:** S1 activates, direction latched, vehicle reverses
+before reaching S2.
+- Entering latch set
+- No confirming second-sensor activation
+- Vehicle leaves the sensor area
+- Cleanup logic clears the latch
+- No count generated
 
-Sequence:
+**Pass** — sequences that begin but do not complete are not counted.
 
-S1 activates, direction is latched, then the vehicle reverses before reaching S2.
+**Test 5 — Sensor flicker / double-count protection:** a valid entry counts once,
+then an extra activation or flicker occurs.
+- Entry counted once
+- Direction latch consumed and cleared after the count
+- Additional sensor activity does not generate another count
 
-Result:
+**Pass** — one vehicle movement produces only one count.
 
-	•	Entering latch set
-	•	No confirming second sensor activation
-	•	Vehicle leaves the sensor area
-	•	Cleanup logic clears the latch
-	•	No count generated
+### Known limitations
+- **Tailgating is not resolved.** Two vehicles following nose-to-tail can register
+  as a single event — two simple point sensors cannot distinguish one long vehicle
+  from two close ones. Resolving this would require a different sensing approach
+  (e.g., speed/timing gating or an additional sensor).
+- **Simulator only.** Designed and verified in the Do-more Designer simulator; not
+  yet run on physical sensors or hardware.
 
-Pass.
+### What I learned
+Counting vehicles is more complicated than simply detecting a sensor turning on. The
+main challenge was determining direction while avoiding false counts from partial
+movements, reversals, and repeated sensor activations. Building the direction
+latches, count-confirmation logic, occupancy limits, and cleanup logic showed me how
+PLC systems use state information to make reliable decisions.
 
-This test verifies that vehicles which begin a sequence but do not complete it are not counted.
+The most important lesson was learning to count on the **edge of a confirmed event**
+rather than on a condition that stays true for multiple PLC scans. A latched bit can
+stay on for many scans, which causes repeated counts if it is not consumed and
+cleared after use.
 
-Test 7: Sensor Flicker / Double-Count Protection
-
-Sequence:
-
-A valid entry sequence occurs and increases the count. After the count, an additional sensor activation or flicker occurs.
-
-Result:
-
-	•	Entry counted once
-	•	Direction latch consumed and cleared after the count
-	•	Additional sensor activity does not generate another count
-
-Pass.
-
-This test verifies that one vehicle movement produces only one count.
-
-⸻
-
-Occupancy Limits
-
-The parking lot capacity is limited to five vehicles.
-
-The PLC only allows an entry count when:
-
-	•	CT0.Acc < 5
-
-The PLC only allows an exit count when:
-
-	•	CT0.Acc > 0
-
-These conditions prevent the counter from exceeding the maximum capacity or going below zero.
-
-⸻
-
-What I Learned
-
-This project showed that counting vehicles is more complicated than simply detecting a sensor turning on.
-
-The main challenge was determining direction while avoiding false counts from partial movements, reversals, and repeated sensor activations. Building the direction latches, count confirmation logic, occupancy limits, and cleanup logic helped me understand how PLC systems use state information to make reliable decisions.
-
-One of the most important lessons was learning to count on the edge of a confirmed event rather than on a condition that remains true for multiple PLC scans. A latched bit can stay on for many scans, which can cause repeated counts if it is not consumed and cleared after use.
-<img width="1920" height="1080" alt="phase 3 directional counter2png" src="https://github.com/user-attachments/assets/702cf194-3ee9-4660-928f-0095d49656cf" />
+<img width="1920" height="1080" alt="phase 3 directional counter2" src="https://github.com/user-attachments/assets/702cf194-3ee9-4660-928f-0095d49656cf" />
 <img width="1920" height="1080" alt="phase 3 directional counter" src="https://github.com/user-attachments/assets/9434e596-91e8-49c7-b7b9-e51640f8c2cc" />
-
 
 ## Author
 
