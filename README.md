@@ -83,8 +83,6 @@ An Up/Down Counter (UDC) instruction is used to maintain a live occupancy count.
 
 ---
 
-### System Operation
-
 ### Up/Down Counting
 
 A UDC (Up/Down Counter) instruction is used because vehicles both enter and leave the parking area.
@@ -131,7 +129,7 @@ For example, with a capacity of 5 vehicles:
 
 ---
 
-### I/O Mapping
+### I/O List
 
 | Address | Description               |
 | ------- | ------------------------- |
@@ -149,7 +147,6 @@ For example, with a capacity of 5 vehicles:
 * Relational comparison instructions
 * Boundary condition handling
 * Occupancy monitoring logic
-* bench-simulated project 
 
 ---
 <img width="1920" height="1080" alt="counter2" src="https://github.com/user-attachments/assets/1b10aa47-328b-4f00-a91f-dcd1b0687ed3" />
@@ -206,7 +203,7 @@ Two sensors are positioned in sequence (S1 outer, S2 inner):
 - If both sensors clear without a confirming second trip, cleanup logic clears the
   latch (the abort/reversal case).
 
-### I/O Mapping
+### I/O List
 | Address | Type | Description |
 |---|---|---|
 | X0 | Input | Outer sensor (S1) |
