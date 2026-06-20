@@ -64,9 +64,9 @@ An automatic traffic light sequence that runs continuously:
 <img width="1920" height="1080" alt="traffic light" src="https://github.com/user-attachments/assets/112f6918-de93-492e-a10f-19c16423980a" />
 <img width="1920" height="1080" alt="traffic light2" src="https://github.com/user-attachments/assets/1368be70-b0b7-4dfc-b9f6-f49392ce3f7d" />
 
-# Project 3: BRX PLC Up/Down Occupancy Counter
+## Project 3: BRX PLC Up/Down Occupancy Counter
 
-## Overview
+### Overview
 
 This project implements an occupancy counter using an AutomationDirect BRX PLC programmed in Do-more Designer. The system tracks the number of vehicles currently occupying a parking area by counting vehicles entering and exiting through separate sensors.
 
@@ -74,7 +74,7 @@ An Up/Down Counter (UDC) instruction is used to maintain a live occupancy count.
 
 ---
 
-## Objectives
+### Objectives
 
 * Count vehicles entering the parking area.
 * Count vehicles exiting the parking area.
@@ -84,7 +84,7 @@ An Up/Down Counter (UDC) instruction is used to maintain a live occupancy count.
 
 ---
 
-## System Operation
+### System Operation
 
 ### Up/Down Counting
 
@@ -132,7 +132,7 @@ For example, with a capacity of 5 vehicles:
 
 ---
 
-## I/O Mapping
+### I/O Mapping
 
 | Address | Description               |
 | ------- | ------------------------- |
@@ -143,7 +143,7 @@ For example, with a capacity of 5 vehicles:
 
 ---
 
-## Key PLC Concepts Demonstrated
+### Key PLC Concepts Demonstrated
 
 * Up/Down Counter (UDC) implementation
 * Edge-triggered counting
@@ -157,7 +157,7 @@ For example, with a capacity of 5 vehicles:
 <img width="1920" height="1080" alt="counter" src="https://github.com/user-attachments/assets/d73c9e28-7133-4066-a435-f1def201f05c" />
 
 
-## Testing
+### Testing
 
 The project was tested using the Do-more Designer simulator.
 
@@ -172,7 +172,7 @@ Test cases included:
 
 ---
 
-## Future Improvements
+### Future Improvements
 
 * Direction detection using multiple sensors — implemented in Project 4.
 * Display occupancy on an HMI.
