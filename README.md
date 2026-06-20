@@ -28,8 +28,9 @@ A motor latching circuit where:
 Seal-in contact: the output coil (Y1) uses its own NO contact in parallel with the Start button to maintain the rung true after the momentary Start button is released. This is the fundamental motor control latching circuit used in industrial automation.
 
 ### Screenshot
-<img width="1280" height="720" alt="seal-in motot" src="https://github.com/user-attachments/assets/e24e9cf4-763d-481e-9697-faf73c62dde4" />
-<img width="1280" height="720" alt="seal-in motor" src="https://github.com/user-attachments/assets/02613bed-3e83-4f7b-9e21-58a3fd3d203a" />
+<img width="1920" height="1080" alt="seal-in2" src="https://github.com/user-attachments/assets/063480a2-03ab-4d74-98d2-2c192a57913a" />
+<img width="1920" height="1080" alt="seal-in" src="https://github.com/user-attachments/assets/9feba34e-afb9-4a59-8848-3c74b6207a0d" />
+
 
 
 ## Project 2: Traffic Light Controller
@@ -152,8 +153,8 @@ For example, with a capacity of 5 vehicles:
 * bench-simulated project 
 
 ---
-<img width="1280" height="720" alt="WhatsApp Image 2026-06-03 at 9 15 51 PM" src="https://github.com/user-attachments/assets/7196bbd4-c3e8-4878-bc71-e159da837858" />
-<img width="1280" height="720" alt="WhatsApp Image 2026-06-03 at 9 16 21 PM" src="https://github.com/user-attachments/assets/ab09517f-ce9d-4c31-9816-21c81e518736" />
+<img width="1920" height="1080" alt="counter2" src="https://github.com/user-attachments/assets/1b10aa47-328b-4f00-a91f-dcd1b0687ed3" />
+<img width="1920" height="1080" alt="counter" src="https://github.com/user-attachments/assets/d73c9e28-7133-4066-a435-f1def201f05c" />
 
 
 ## Testing
@@ -188,9 +189,6 @@ Test cases included:
 
 ---
 
-## Author
-
-**AbdulAzeem Adebayo**
 
 Controls and Automation Engineering Project
 
@@ -271,7 +269,10 @@ This project showed that counting vehicles is more complicated than simply detec
 The main challenge was determining direction while avoiding false counts from partial movements, reversals, and repeated sensor activations. Building the direction latches, count confirmation logic, occupancy limits, and cleanup logic helped me understand how PLC systems use state information to make reliable decisions.
 
 One of the most important lessons was learning to count on the edge of a confirmed event rather than on a condition that remains true for multiple PLC scans. A latched bit can stay on for many scans, which can cause repeated counts if it is not consumed and cleared after use.
+<img width="1920" height="1080" alt="phase 3 directional counter2png" src="https://github.com/user-attachments/assets/702cf194-3ee9-4660-928f-0095d49656cf" />
+<img width="1920" height="1080" alt="phase 3 directional counter" src="https://github.com/user-attachments/assets/9434e596-91e8-49c7-b7b9-e51640f8c2cc" />
 
-<img width="1280" height="720" alt="plc directional counter 2" src="https://github.com/user-attachments/assets/8b532452-7092-4b13-b936-29fdb1736a67" />
-<img width="1280" height="720" alt="plc directional counter 1" src="https://github.com/user-attachments/assets/7fd09ac8-3232-4044-a13a-18cad86c34e9" />
 
+## Author
+
+**AbdulAzeem Adebayo**
