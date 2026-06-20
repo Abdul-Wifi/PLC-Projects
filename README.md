@@ -1,6 +1,5 @@
-# PLC-Projects
-My PLC ladder logic projects built in Do-more Designer as part of self-directed automation engineering study
 # PLC Projects — AbdulAzeem Adebayo
+My PLC ladder logic projects built in Do-more Designer as part of self-directed automation engineering study
 
 Self-directed PLC study using Do-more Designer (AutomationDirect BRX/Do-more).
 Built as preparation for JSU's Programmable Logic Controllers course (Fall 2026)
