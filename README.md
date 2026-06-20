@@ -174,7 +174,7 @@ Test cases included:
 
 ## Future Improvements
 
-* Add direction detection using multiple sensors.
+* Direction detection using multiple sensors — implemented in Project 4.
 * Display occupancy on an HMI.
 * Add "Parking Full" and "Space Available" indicators.
 * Log occupancy data for analysis and reporting.
