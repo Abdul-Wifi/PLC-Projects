@@ -61,8 +61,8 @@ An automatic traffic light sequence that runs continuously:
 - Automatic continuous sequencing without manual input
 
 ### Screenshot
-<img width="1280" height="720" alt="traffic light pic" src="https://github.com/user-attachments/assets/2d41ec19-9287-4081-aeeb-60d3d1169397" />
-<img width="1280" height="720" alt="traffic light" src="https://github.com/user-attachments/assets/de30d3e9-da9b-43e1-9df3-930b88681c9f" />
+<img width="1920" height="1080" alt="traffic light" src="https://github.com/user-attachments/assets/112f6918-de93-492e-a10f-19c16423980a" />
+<img width="1920" height="1080" alt="traffic light2" src="https://github.com/user-attachments/assets/1368be70-b0b7-4dfc-b9f6-f49392ce3f7d" />
 
 # Project 3: BRX PLC Up/Down Occupancy Counter
 
