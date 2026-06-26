@@ -2,8 +2,6 @@
 My PLC ladder logic projects built in Do-more Designer as part of self-directed automation engineering study
 
 Self-directed PLC study using Do-more Designer (AutomationDirect BRX/Do-more).
-Built as preparation for JSU's Programmable Logic Controllers course (Fall 2026)
-and Summer 2027 engineering internship applications.
 
 ## Project 1: Motor Start/Stop with Seal-In Contact
 **Platform:** Do-more Designer (BRX simulator)
